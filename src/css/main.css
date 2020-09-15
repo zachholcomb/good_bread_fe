@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.label {
+  @apply text-gray-700;
+  @apply block;
+  @apply text-xs; 
+  @apply uppercase; 
+  @apply font-bold; 
+  @apply mb-2;
+}
+
+.input {
+  @apply appearance-none;
+  @apply bg-gray-200;
+  @apply block;
+  @apply border;
+  @apply w-full;
+  @apply rounded;
+  @apply py-3;
+  @apply px-4;
+  @apply leading-tight;
+  @apply text-gray-700;
+}
+
+.input:focus {
+  @apply outline-none;
+  @apply bg-white;
+  @apply border-gray-500;
+}
+
+.link-gray {
+  @apply no-underline;
+  @apply text-gray-700;
+}
+
+.link-gray:hover {
+  @apply text-green-500;
+}
+
+.button {
+  @apply font-sans;
+  @apply font-bold;
+  @apply px-4;
+  @apply rounded;
+  @apply cursor-pointer;
+  @apply no-underline;
+  @apply bg-green-500;
+  @apply block;
+  @apply w-full;
+  @apply py-4;
+  @apply text-white;
+  @apply items-center;
+  @apply justify-center;
+}
+
+.button:hover {
+  @apply bg-green-700;
+}
