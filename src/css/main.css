@@ -59,3 +59,11 @@
 .button:hover {
   @apply bg-green-700;
 }
+
+.bread-bg {
+  background-image: url(../assets/bread.jpg);
+  @apply bg-cover;
+}
+.bread-bg .text-holder {
+  background: rgba(255,255,255,0.6);
+}
