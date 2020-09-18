@@ -3,7 +3,7 @@
     <div class="border p-10 border-grey-light shadow rounded">
       <h3 class="text-2xl mb-6 text-gray-700">Sign Up</h3>
       <form @submit.prevent="register">
-        <div class="text-red-600" v-if="error">{{ error }}</div>
+        <div class="text-red-600" v-if="errors">{{ errors }}</div>
         <div class="mb-6">
           <label for="email" class="label">Email</label>
           <input type="email" v-model="email" class="input" id="email" placeholder="email@example.com">
@@ -38,6 +38,9 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
+import { REGISTER } from '@/store/actions.type'
+
 export default {
   name: 'Register',
   data () {
@@ -50,44 +53,23 @@ export default {
       error: ''
     }
   },
-  created () {
-    this.checkedSignedIn()
-  },
-  updated () {
-    this.checkedSignedIn()
-  },
   methods: {
     register () {
-      this.$http.plain.post('/api/v1/register', { email: this.email,
-        name: this.name,
-        address: this.address,
-        password: this.password,
-        password_confirmation: this.password_confirmation
-      })
-        .then(response => this.registerSuccessful(response))
-        .catch(error => this.registerFailed(error))
+      this.$store
+        .dispatch(REGISTER, {
+          email: this.email,
+          name: this.name,
+          address: this.address,
+          password: this.password,
+          password_confirmation: this.password_confirmation
+        })
+        .then(() => this.$router.replace('/dashboard'))
     },
-    registerSuccessful (response) {
-      if (!response.data.csrf) {
-        this.registerFailed(response)
-        return
-      }
-
-      localStorage.csrf = response.data.csrf
-      localStorage.signedIn = true
-      this.error = ''
-      this.$router.replace('/dashboard')
-    },
-    registerFailed (error) {
-      this.error = (error.response && error.response.data && error.response.data.error) || 'Something went wrong'
-      delete localStorage.csrf
-      delete localStorage.signedIn
-    },
-    checkedSignedIn () {
-      if (localStorage.signedIn) {
-        this.$router.replace('/dashboard')
-      }
-    }
+  },
+  computed: {
+    ...mapState({
+      errors: state => state.auth.errors
+    })
   }
 }
 </script>
