@@ -1,11 +1,15 @@
+// require '/src/assets/bread2.png'
+
 module.exports = {
-  purge: [],
+  purge: [
+    "./src/components/*.vue"
+  ],
   theme: {
     extend: {
-      backgroundImage: (theme) => ({
-        'bread': "url('/src/assets/bread2.png')"
+      backgroundImage: theme => ({
+        'bread': "url('/src/assets/bread.jpg')",
       })
-    },
+    }
   },
   variants: {},
   plugins: [],
