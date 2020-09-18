@@ -2,8 +2,8 @@
   <div class="max-w-sm m-auto my-8">
     <div class="border p-10 border-gray-200 shadow rounded">
       <h3 class="text-2xl mb-6 text-gray-700">Login</h3>
-      <form @submit.prevent="signIn">
-        <div class="text-red-600" v-if="error"> {{ error }}</div>
+      <form @submit.prevent="signIn(email, password)">
+        <div class="text-red-600" v-if="errors"> {{ errors }}</div>
         <div class="mb-6">
           <label for="email" class="label">Email</label>
           <input type="email" v-model="email" class="input" id="email" placeholder="email@example.com">
@@ -21,6 +21,9 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
+import { LOGIN } from '@/store/actions.type'
+
 export default {
   name: 'Login',
   data () {
@@ -30,39 +33,18 @@ export default {
       error: ''
     }
   },
-  created () {
-    this.checkSignedIn()
-  },
-  updated () {
-    this.checkSignedIn()
-  },
-  methods: {
-    signIn () {
-      this.$http.plain.post('/api/v1/login', { email: this.email, password: this.password })
-        .then(response => this.signinSuccessful(response))
-        .catch(error => this.signinFailed(error))
-    },
-    signinSuccessful (response) {
-      if (!response.data.csrf) {
-        this.signinFailed(response)
-        return
-      }
 
-      localStorage.csrf = response.data.csrf
-      localStorage.signedIn = true
-      this.error = ''
-      this.$router.replace('/dashboard')
-    },
-    signinFailed (error) {
-      this.error = (error.response && error.response.data && error.response.data.error) || ''
-      delete localStorage.csrf
-      delete localStorage.signedIn
-    },
-    checkSignedIn () {
-      if (localStorage.signedIn) {
-        this.$router.replace('/dashboard')
-      }
+  methods: {
+    signIn (email, password) {
+      this.$store
+        .dispatch(LOGIN, { email, password })
+        .then(() => this.$router.replace('/dashboard'))
     }
+  },
+  computed: {
+    ...mapState({
+      errors: state => state.auth.errors
+    })
   }
 }
 </script>
