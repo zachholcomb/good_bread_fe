@@ -1,5 +1,5 @@
 import ApiService from '@/common/api.service'
-import { LOGIN, LOGOUT } from './actions.type'
+import { LOGIN, LOGOUT, REGISTER } from './actions.type'
 import { SET_AUTH, SET_ERROR, PURGE_AUTH } from './mutations.type'
 
 
@@ -25,6 +25,19 @@ const actions = {
         })
         .catch (({ response }) => {
           context.commit(SET_ERROR, response.data.data.attributes.message)
+        })
+    })
+  },
+  [REGISTER] (context, credentials) {
+    return new Promise((resolve, reject) => {
+      ApiService.post('/register', credentials)
+        .then(({ data }) => {
+          context.commit(SET_AUTH, data)
+          resolve(data)
+        })
+        .catch (({ response }) => {
+          context.commit(SET_ERROR, response.data.error)
+          reject(response)
         })
     })
   },
