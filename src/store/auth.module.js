@@ -12,6 +12,9 @@ const state = {
 const getters = {
   signedIn (state) {
     return state.signedIn
+  },
+  getUser (state) {
+    return state.user
   }
 }
 
@@ -54,6 +57,7 @@ const mutations = {
     state.signedIn = true
     state.csrf = data.csrf
     state.user = data.user.data.attributes
+    console.log(state.user.email)
   },
   [PURGE_AUTH] (state) {
     state.signedIn = false
