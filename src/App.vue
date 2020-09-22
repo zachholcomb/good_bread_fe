@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Header />
+    <NavBar />
     <router-view/>
+    <SiteFooter />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
+import NavBar from '@/components/NavBar.vue'
+import SiteFooter from '@/components/SiteFooter.vue'
 export default {
   name: 'App',
   components: {
-    Header
+    NavBar,
+    SiteFooter
   }
 }
 </script>
