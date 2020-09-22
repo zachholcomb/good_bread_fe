@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Register from '@/components/Register.vue'
-import Login from '@/components/Login.vue'
+import Register from '@/views/Register.vue'
+import Login from '@/views/Login.vue'
 import HomePage from '@/views/HomePage.vue'
-import Dashboard from '@/components/Dashboard.vue'
+import UserDashboard from '@/views/UserDashboard.vue'
+import Cart from '@/views/Cart.vue'
+import Shop from '@/views/Shop.vue'
 
 Vue.use(Router)
 
@@ -28,8 +30,18 @@ export default new Router({
     },
     {
       path: '/dashboard',
-      name: Dashboard,
-      component: Dashboard
+      name: UserDashboard,
+      component: UserDashboard
+    },
+    {
+      path: '/cart',
+      name: Cart,
+      component: Cart
+    },
+    {
+      path: '/shop',
+      name: Shop,
+      component: Shop
     }
   ]
 })
