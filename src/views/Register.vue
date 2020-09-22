@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm m-auto my-8">
+  <div class="max-w-sm m-auto my-8 py-20">
     <div class="border p-10 border-grey-light shadow rounded">
       <h3 class="text-2xl mb-6 text-gray-700">Sign Up</h3>
       <form @submit.prevent="register">
@@ -31,7 +31,7 @@
 
         <button type="submit" class="button">Register</button>
         <div class="my-4">
-          <router-link to="/signin" class="link-gray">Log In</router-link>
+          <router-link to="/login" class="link-gray">Log In</router-link>
         </div>
       </form>
     </div>
