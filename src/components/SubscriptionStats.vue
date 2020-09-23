@@ -5,8 +5,7 @@
       <h3>{{ userSub.subscription_type }}</h3>
       <h3>{{ userSub.delivery_day }}</h3>
       <div v-for="shipment in userShipments" v-bind:key="shipment.id">
-        <p>{{ shipment.attributes.status }}</p>
-        <p>{{ shipment.attributes.delivery_date }}</p>
+        <p>{{ shipment.attributes.status }} {{ shipment.attributes.delivery_date }}</p>
       </div>
     </div>
   </div>
