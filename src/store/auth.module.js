@@ -7,7 +7,7 @@ const state = {
   errors: null,
   user: {},
   signedIn: false,
-  csrf: null
+  access: null
 }
 const getters = {
   signedIn (state) {
@@ -15,6 +15,9 @@ const getters = {
   },
   getUser (state) {
     return state.user
+  },
+  getToken (state) {
+    return state.access
   }
 }
 
@@ -55,13 +58,12 @@ const mutations = {
   },
   [SET_AUTH] (state, data) {
     state.signedIn = true
-    state.csrf = data.csrf
+    state.access = data.access
     state.user = data.user.data.attributes
-    console.log(state.user.email)
   },
   [PURGE_AUTH] (state) {
     state.signedIn = false
-    state.csrf = null
+    state.access = null
     state.errors = null
     state.user = {}
   }
