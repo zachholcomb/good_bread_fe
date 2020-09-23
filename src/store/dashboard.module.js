@@ -52,7 +52,6 @@ const mutations = {
     state.errors = data
   },
   [SET_SUB] (state, data) {
-    console.log(data.included)
     state.user_sub = data.data.attributes
     state.user_shipments = data.included
   },
