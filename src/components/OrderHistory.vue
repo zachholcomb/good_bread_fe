@@ -1,9 +1,10 @@
 <template>
-  <div class="text-center">
-    <h3>Order History</h3>
-    <div v-for="order in userOrders" v-bind:key="order.id">
-      {{ console.log(userOrders) }}
-      {{ console.log("OrderHISTORY", order) }}
+  <div class="max-w-xl m-auto text-center">
+    <div class="border p-10 border-gray-200 shadow rounded">
+      <h3 class="text-4xl mb-8 text-gray-700">Order History</h3>
+      <div v-for="order in userOrders" v-bind:key="order.id">
+        {{ order.attributes.status }} {{ order.attributes.delivery_date }}
+      </div>
     </div>
   </div>
 </template>
