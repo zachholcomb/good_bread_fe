@@ -11,8 +11,8 @@ const ApiService = {
   },
 
   setHeader (token) {
-    Vue.axios.defaults.headers.common = 
-    { 
+    Vue.axios.defaults.headers.common =
+    {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     }
@@ -22,7 +22,7 @@ const ApiService = {
     return Vue.axios.post(`${resource}`, params)
   },
 
-  securedGet (resource, token) { 
+  securedGet (resource, token) {
     this.setHeader(token)
     return Vue.axios.get(`${resource}`)
   }

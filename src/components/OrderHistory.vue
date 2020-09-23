@@ -14,9 +14,9 @@ import { USER_ORDERS } from '@/store/actions.type'
 export default {
   name: 'OrderHistory',
   beforeCreate () {
-    const params = { 
-      token: this.$store.getters['getToken'], 
-      userId: this.$store.getters['getUser'].id 
+    const params = {
+      token: this.$store.getters['getToken'],
+      userId: this.$store.getters['getUser'].id
     }
     this.$store
       .dispatch(USER_ORDERS, params)

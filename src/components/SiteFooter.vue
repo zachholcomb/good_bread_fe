@@ -16,7 +16,6 @@
       </div>
     </div>
   </footer>
-  
 </template>
 <script>
 import EmailForm from './EmailForm.vue'

@@ -77,7 +77,7 @@ export default {
           password_confirmation: this.password_confirmation
         })
         .then(() => this.$router.replace('/dashboard'))
-    },
+    }
   },
   computed: {
     ...mapState({

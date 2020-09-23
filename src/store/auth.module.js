@@ -2,7 +2,6 @@ import ApiService from '@/common/api.service'
 import { LOGIN, LOGOUT, REGISTER } from './actions.type'
 import { SET_AUTH, SET_ERROR, PURGE_AUTH } from './mutations.type'
 
-
 const state = {
   errors: null,
   user: {},
@@ -29,7 +28,7 @@ const actions = {
           context.commit(SET_AUTH, data)
           resolve(data)
         })
-        .catch (({ response }) => {
+        .catch(({ response }) => {
           context.commit(SET_ERROR, response.data.data.attributes.message)
         })
     })
@@ -41,7 +40,7 @@ const actions = {
           context.commit(SET_AUTH, data)
           resolve(data)
         })
-        .catch (({ response }) => {
+        .catch(({ response }) => {
           context.commit(SET_ERROR, response.data.error)
           reject(response)
         })
@@ -70,8 +69,8 @@ const mutations = {
 }
 
 export default {
-    state,
-    actions,
-    mutations,
-    getters
+  state,
+  actions,
+  mutations,
+  getters
 }

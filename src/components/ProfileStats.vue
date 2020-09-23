@@ -15,8 +15,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  
-  name: 'ProfileStats', 
+  name: 'ProfileStats',
   computed: {
     ...mapGetters(['signedIn', 'getUser'])
   }
