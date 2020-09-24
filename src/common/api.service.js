@@ -9,8 +9,22 @@ const ApiService = {
     Vue.use(VueAxios, axios)
     Vue.axios.defaults.baseURL = API_URL
   },
-  post(resource, params) {
+
+  setHeader (token) {
+    Vue.axios.defaults.headers.common =
+    {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  },
+
+  post (resource, params) {
     return Vue.axios.post(`${resource}`, params)
+  },
+
+  securedGet (resource, token) {
+    this.setHeader(token)
+    return Vue.axios.get(`${resource}`)
   }
 }
 

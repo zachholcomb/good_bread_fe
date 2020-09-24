@@ -2,12 +2,11 @@ import ApiService from '@/common/api.service'
 import { LOGIN, LOGOUT, REGISTER } from './actions.type'
 import { SET_AUTH, SET_ERROR, PURGE_AUTH } from './mutations.type'
 
-
 const state = {
   errors: null,
   user: {},
   signedIn: false,
-  csrf: null
+  access: null
 }
 const getters = {
   signedIn (state) {
@@ -15,6 +14,9 @@ const getters = {
   },
   getUser (state) {
     return state.user
+  },
+  getToken (state) {
+    return state.access
   }
 }
 
@@ -26,7 +28,7 @@ const actions = {
           context.commit(SET_AUTH, data)
           resolve(data)
         })
-        .catch (({ response }) => {
+        .catch(({ response }) => {
           context.commit(SET_ERROR, response.data.data.attributes.message)
         })
     })
@@ -38,7 +40,7 @@ const actions = {
           context.commit(SET_AUTH, data)
           resolve(data)
         })
-        .catch (({ response }) => {
+        .catch(({ response }) => {
           context.commit(SET_ERROR, response.data.error)
           reject(response)
         })
@@ -55,21 +57,20 @@ const mutations = {
   },
   [SET_AUTH] (state, data) {
     state.signedIn = true
-    state.csrf = data.csrf
+    state.access = data.access
     state.user = data.user.data.attributes
-    console.log(state.user.email)
   },
   [PURGE_AUTH] (state) {
     state.signedIn = false
-    state.csrf = null
+    state.access = null
     state.errors = null
     state.user = {}
   }
 }
 
 export default {
-    state,
-    actions,
-    mutations,
-    getters
+  state,
+  actions,
+  mutations,
+  getters
 }

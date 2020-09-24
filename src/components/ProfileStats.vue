@@ -5,6 +5,8 @@
       <h3 class="text-2xl text-gray-700">{{ getUser.name }}</h3>
       <h3 class="text-xl text-gray-700">{{ getUser.address }}</h3>
       <h3 class="text-xl text-gray-700">{{ getUser.email }}</h3>
+      <h3 class="text-xl text-gray-700">{{ getUser.city }}, {{ getUser.state }}</h3>
+      <h3 class="text-xl text-gray-700">{{ getUser.zip }}</h3>
     </div>
   </div>
 </template>
@@ -12,8 +14,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  
-  name: 'ProfileStats', 
+  name: 'ProfileStats',
   computed: {
     ...mapGetters(['signedIn', 'getUser'])
   }

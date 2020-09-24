@@ -1,11 +1,11 @@
 <template>
   <div class="m-auto py-10">
-    <h3 class="font-mono font-regular text-3xl mb-4 text-center">Welcome</h3>
-    <div class="grid grid-cols-2">
+    <h3 class=" text-6xl text-gray-700 mb-4 text-center">Welcome Back</h3>
+    <div class="grid grid-cols-2 pb-10">
       <ProfileStats></ProfileStats>
       <SubscriptionStats></SubscriptionStats>
     </div>
-    <OrderHistory></OrderHistory>
+      <OrderHistory></OrderHistory>
   </div>
 </template>
 <script>
