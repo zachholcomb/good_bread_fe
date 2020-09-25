@@ -1,9 +1,11 @@
 <template>
-  <div class="max-w-xl m-auto text-center">
+  <div class="max-w-xl m-auto text-center bg-white">
     <div class="border p-10 border-gray-200 shadow rounded">
       <h3 class="text-4xl mb-8 text-gray-700">Order History</h3>
-      <div v-for="order in userOrders" v-bind:key="order.id">
-        {{ order.attributes.status }} {{ order.attributes.delivery_date }}
+      <div class="divide-y divide-gray-400 w-48 m-auto">
+        <div v-for="order in userOrders" v-bind:key="order.id" class="text-gray-700 pt-2">
+            {{ order.attributes.status }} {{ order.attributes.delivery_date }}
+        </div>
       </div>
     </div>
   </div>
