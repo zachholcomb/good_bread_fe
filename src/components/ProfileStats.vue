@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm m-auto flex">
+  <div class="max-w-sm m-auto flex bg-white">
     <div class="border p-10 border-gray-200 shadow rounded">
       <h3 class="text-4xl mb-8 text-gray-700">Account Settings</h3>
       <h3 class="text-2xl text-gray-700">{{ getUser.name }}</h3>
