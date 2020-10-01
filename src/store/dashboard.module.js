@@ -1,5 +1,5 @@
 import ApiService from '@/common/api.service'
-import { USER_ORDERS, USER_SUB } from './actions.type'
+import { UPDATE_SUB, USER_ORDERS, USER_SUB } from './actions.type'
 import { SET_SUB, SET_ERROR, SET_ORDERS } from './mutations.type'
 
 const state = {
@@ -24,6 +24,18 @@ const actions = {
   [USER_SUB] (context, params) {
     return new Promise(resolve => {
       ApiService.securedGet(`/users/${params.userId}/subscription`, params.token)
+        .then(({ data }) => {
+          context.commit(SET_SUB, data)
+          resolve(data)
+        })
+        .catch(({ response }) => {
+          context.commit(SET_ERROR, response.data.data.attributes.message)
+        })
+    })
+  },
+  [UPDATE_SUB] (context, params) {
+    return new Promise(resolve => {
+      ApiService.update(`users/${params.userId}/subscription/${state.user_sub.id}`, params.token, params.update_sub)
         .then(({ data }) => {
           context.commit(SET_SUB, data)
           resolve(data)

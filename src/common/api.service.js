@@ -25,6 +25,10 @@ const ApiService = {
   securedGet (resource, token) {
     this.setHeader(token)
     return Vue.axios.get(`${resource}`)
+  },
+  update (resource, token, params) {
+    this.setHeader(token)
+    return Vue.axios.put(`${resource}`, params)
   }
 }
 
