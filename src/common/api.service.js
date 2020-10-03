@@ -17,11 +17,12 @@ const ApiService = {
       'Authorization': `Bearer ${token}`
     }
   },
-
   post (resource, params) {
     return Vue.axios.post(`${resource}`, params)
   },
-
+  get (resource) {
+    return Vue.axios.get(`${resource}`)
+  },
   securedGet (resource, token) {
     this.setHeader(token)
     return Vue.axios.get(`${resource}`)
