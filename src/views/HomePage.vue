@@ -2,7 +2,6 @@
   <div>
     <HomeSplash></HomeSplash>
   </div>
-
 </template>
 <script>
 import HomeSplash from '@/components/HomeSplash.vue'
