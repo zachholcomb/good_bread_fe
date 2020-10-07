@@ -1,7 +1,7 @@
 <template>
   <Transition name='fade'>
-    <div 
-      class="fixed pin inset-0 w-full flex items-center justify-center bg-gray-700 bg-opacity-25" 
+    <div
+      class="overflow-auto fixed pin inset-0 w-full flex items-center justify-center bg-gray-700 bg-opacity-25"
       v-show="value"
       @click.self="close"
     >
@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  name: "UpdateModal",
+  name: 'UpdateModal',
   props: {
     value: {
       required: true
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     close () {
-      this.$emit("input", !this.value)
+      this.$emit('input', !this.value)
     }
   }
 }
