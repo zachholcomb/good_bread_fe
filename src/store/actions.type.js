@@ -9,3 +9,9 @@ export const UPDATE_SUB = 'updateSub'
 
 // ITEM ACTIONS
 export const GET_ITEMS = 'getItems'
+
+// CART ACTIONS
+export const ADD_CART = 'addCart'
+export const REMOVE_ITEM = 'removeCartItem'
+export const REMOVE_CART = 'removeCart'
+export const SET_ORDER = 'setOrder'
