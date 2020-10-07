@@ -84,5 +84,4 @@ export default {
     ItemsContainer
   }
 }
-console.log(this.getItems)
 </script>
