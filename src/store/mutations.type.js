@@ -7,3 +7,8 @@ export const SET_ORDERS = 'setOrders'
 
 // ITEM MUTATIONS
 export const SET_ITEMS = 'setItems'
+
+// CART MUTATIONS
+export const SET_CART = 'setCart'
+export const PURGE_CART_ITEM = 'removeCartItem'
+export const PURGE_CART = 'deleteCart'
