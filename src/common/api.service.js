@@ -2,7 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-const API_URL = 'http://localhost:3000/api/v1'
+const API_URL = process.env.API_URL
 
 const ApiService = {
   init () {
@@ -18,6 +18,7 @@ const ApiService = {
     }
   },
   post (resource, params) {
+    console.log(API_URL)
     return Vue.axios.post(`${resource}`, params)
   },
   get (resource) {
