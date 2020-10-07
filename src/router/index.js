@@ -5,6 +5,8 @@ import Login from '@/views/Login.vue'
 import HomePage from '@/views/HomePage.vue'
 import UserDashboard from '@/views/UserDashboard.vue'
 import Cart from '@/views/Cart.vue'
+import CartLogin from '@/views/CartLogin.vue'
+import CartCheckout from '@/views/CartCheckout.vue'
 import Shop from '@/views/Shop.vue'
 
 Vue.use(Router)
@@ -42,6 +44,16 @@ export default new Router({
       path: '/shop',
       name: Shop,
       component: Shop
+    },
+    {
+      path: '/cart/login',
+      name: CartLogin,
+      component: CartLogin
+    },
+    {
+      path: '/cart/checkout',
+      name: CartCheckout,
+      component: CartCheckout
     }
   ]
 })

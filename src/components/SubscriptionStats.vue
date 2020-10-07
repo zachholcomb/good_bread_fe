@@ -13,8 +13,8 @@
             <label for="Ship Day" class="label">Preferred Delivery Date</label>
             <input type="address" v-model="userSub.delivery_day" class="input" id="address" placeholder="12345 Place Pl.">
           </div>
-          <button 
-            type="submit"       
+          <button
+            type="submit"
             class="flex-shrink-0 border-transparent border-4 bg-teal-500 hover:bg-teal-800 text-sm py-1 px-20 rounded text-white"
           >
             Update
@@ -32,8 +32,8 @@
         </div>
       </div>
       <div class="text-center pt-4">
-        <button 
-          class="flex-shrink-0 border-transparent border-4 bg-teal-500 hover:bg-teal-800 text-sm py-1 px-8 rounded text-white" 
+        <button
+          class="flex-shrink-0 border-transparent border-4 bg-teal-500 hover:bg-teal-800 text-sm py-1 px-8 rounded text-white"
           @click.prevent="openModal"
         >
           Edit
