@@ -2,7 +2,7 @@
   <div class="max-w-2xl m-auto flex bg-white border p-10 border-gray-200 shadow rounded text-gray-700">
     <UpdateModal v-model="modalOpen">
       <div class="text-gray-700 center-text">
-        <h3 class="text-4xl">Update Shipping Address</h3>
+        <h3 class="text-4xl">Update Subscription Details</h3>
         <form @submit.prevent="updateSubscription">
           <!-- <div class="text-red-600" v-if="errors">{{ errors }}</div> -->
           <div class="mb-6">
