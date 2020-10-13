@@ -1,8 +1,8 @@
 <template>
-  <div class="max-w-sm m-auto flex bg-white">
+  <div class="max-w-2xl m-auto flex bg-white border p-10 border-gray-200 shadow rounded text-gray-700">
     <UpdateModal v-model="modalOpen">
       <div class="text-gray-700 center-text">
-        <h3 class="text-4xl">Update Shipping Address</h3>
+        <h3 class="text-4xl">Update Subscription Details</h3>
         <form @submit.prevent="updateSubscription">
           <!-- <div class="text-red-600" v-if="errors">{{ errors }}</div> -->
           <div class="mb-6">
@@ -22,11 +22,11 @@
         </form>
       </div>
     </UpdateModal>
-    <div class="border p-10 border-gray-200 shadow rounded text-gray-700">
-      <h3 class="text-4xl mb-8">Your Subscription</h3>
+    <div class="m-auto">
+      <h3 class="text-4xl mb-8 tracking-wider font-thin">Your Subscription</h3>
       <h3>Type: {{ userSub.subscription_type }}</h3>
       <h3>Ship Date: {{ userSub.delivery_day }}</h3>
-      <div class="divide-y divide-gray-400 w-48 m-auto text-center">
+      <div class="divide-y divide-gray-400 w-48 m-auto">
         <div v-for="shipment in userShipments" v-bind:key="shipment.id" class="max-w-xs m-auto pt-2">
           <p>{{ shipment.attributes.status }} {{ shipment.attributes.delivery_date }}</p>
         </div>
