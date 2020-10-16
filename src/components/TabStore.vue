@@ -69,7 +69,7 @@ export default {
   name: 'TabStore',
   data () {
     return {
-      currentTab: 1
+      currentTab: 5
     }
   },
   methods: {
