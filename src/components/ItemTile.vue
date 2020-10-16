@@ -6,6 +6,9 @@
       <div class="text-gray-700">
         <p>{{ item.attributes.description }}</p>
       </div>
+      <div class="p-2 text-gray-700">
+        {{ convertPrice() }}
+      </div>
       <div class="grid grid-cols-2 gap-6">
         <vSelect
           v-model="selected"
@@ -21,6 +24,9 @@
           >
           Add to Cart
         </button>
+      </div>
+      <div v-show="selected" class="p-2 text-2xl text-green-800 tracking-wider">
+        Subtotal: {{ calcSubtotal() }}
       </div>
     </UpdateModal>
       <img class="object-cover h-64 w-full cursor-pointer" @click='openModal' :src='item.attributes.image'>
@@ -54,9 +60,29 @@ export default {
       const input = {
         name: this.item.attributes.name,
         id: this.item.id,
-        amount: this.selected
+        amount: this.selected,
+        price: this.item.attributes.price
       }
       this.$store.dispatch(ADD_CART, input)
+    },
+    convertPrice () {
+      const price = this.item.attributes.price / 100
+      return `$ ${price.toFixed(2)}`
+    },
+    calcSubtotal () {
+      const price = this.item.attributes.price / 100
+      const multiplier = this.convertSelected()
+      const total = price * multiplier
+      return `$ ${total.toFixed(2)}`
+    },
+    convertSelected () {
+      if (this.selected == '1') {
+        return 1
+      } else if (this.selected == 'Half Dozen') {
+        return 6
+      } else if (this.selected == 'Bakers Dozen') {
+        return 13
+      }
     }
   },
   components: {

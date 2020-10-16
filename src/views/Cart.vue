@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-4xl text-center text-gray-700 p-32" v-show="!checkCart()">
+    <div class="text-4xl text-center text-gray-700 p-32 font-thin tracking-wider" v-show="!checkCart()">
       Whoops! No Items in Cart!
     </div>
     <div class="divide-y divide-gray-400 max-w-4xl m-auto pt-8 pb-8">
@@ -9,6 +9,12 @@
         v-bind:key="item.id"
       >
         <CartItem v-bind:item="item"></CartItem>
+      </div>
+      <div 
+        class="text-gray-700 pt-4 text-4xl tracking-wider font-thin text-center"
+        v-show="checkCart()"
+      >
+        Grand Total: {{ calcTotal() }}
       </div>
     </div>
     <div class="max-w-sm m-auto text-center pb-10">
@@ -53,7 +59,17 @@ export default {
       } else {
         this.$router.replace('/cart/login')
       }
+    },
+    calcTotal () {
+      const items = Object.entries(this.getCart)
+      const total = items.reduce((acc, item) => {
+        const price = item[1].price / 100
+        const multiplier = item[1].amount
+        return acc += (price * multiplier)
+      }, 0)
+      return `$ ${total.toFixed(2)}`
     }
+    
   },
   computed: {
     ...mapGetters(['getCart', 'signedIn'])

@@ -4,31 +4,31 @@
       <div class="flex items-center">
         <button @click='selectTab(1)'
                 class="flex-1 bg-gray-200 p-4 font-bold text-gray-700"
-                :class="{ 'bg-teal-500 text-white' : currentTab == 1 }"
+                :class="{ 'bg-teal-200 text-white' : currentTab == 1 }"
         >
           Bread
         </button>
         <button @click='selectTab(2)'
                 class="flex-1 bg-gray-200 p-4 font-bold text-gray-700"
-                :class="{ 'bg-teal-500 text-white' : currentTab == 2 }"
+                :class="{ 'bg-teal-200 text-white' : currentTab == 2 }"
         >
           Pastries
         </button>
         <button @click='selectTab(3)'
                 class="flex-1 bg-gray-200 p-4 font-bold text-gray-700"
-                :class="{ 'bg-teal-500 text-white' : currentTab == 3 }"
+                :class="{ 'bg-teal-200 text-white' : currentTab == 3 }"
         >
           Donuts
         </button>
         <button @click='selectTab(4)'
                 class="flex-1 bg-gray-200 p-4 font-bold text-gray-700"
-                :class="{ 'bg-teal-500 text-white' : currentTab == 4 }"
+                :class="{ 'bg-teal-200 text-white' : currentTab == 4 }"
         >
           Bagels
         </button>
         <button @click='selectTab(5)'
                 class="flex-1 bg-gray-200 p-4 font-bold text-gray-700"
-                :class="{ 'bg-teal-500 text-white' : currentTab == 5 }"
+                :class="{ 'bg-teal-200 text-white' : currentTab == 5 }"
         >
           All
         </button>
@@ -69,7 +69,7 @@ export default {
   name: 'TabStore',
   data () {
     return {
-      currentTab: 1
+      currentTab: 5
     }
   },
   methods: {
