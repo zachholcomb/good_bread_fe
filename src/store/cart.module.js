@@ -59,10 +59,11 @@ const mutations = {
     const name = input.name
     const id = input.id
     const amount = input.amount
+    const price = input.price
     if (state.items[name]) {
       state.items[name].amount += amount
     } else {
-      state.items[name] = { id: id, amount: amount }
+      state.items[name] = { id: id, amount: amount, price: price }
     }
   },
   [PURGE_CART_ITEM] (state, itemName) {
