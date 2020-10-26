@@ -8,6 +8,7 @@ const state = {
   signedIn: false,
   access: null
 }
+
 const getters = {
   signedIn (state) {
     return state.signedIn
