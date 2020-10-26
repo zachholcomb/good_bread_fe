@@ -15,3 +15,6 @@ export const ADD_CART = 'addCart'
 export const REMOVE_ITEM = 'removeCartItem'
 export const REMOVE_CART = 'removeCart'
 export const SET_ORDER = 'setOrder'
+
+// ORDER/SHIPMENT ACTIONS
+export const FETCH_ITEMS = 'getOrderItems'
