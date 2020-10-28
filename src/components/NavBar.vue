@@ -1,6 +1,9 @@
 <template>
-  <header class="bg-gray-200 py-6">
-    <div class="container m-auto flex flex-wrap jutify-end grid grid-cols-3">
+  <header class="pt-8 pb-12">
+    <nav 
+      :class="{ 'scrolled': !view.atTopOfPage }"
+      class="fixed flex w-full bg-white border-b items-center justify-between flex-wrap p-5 m-auto top-0 animated"
+    >
         <div>
           <router-link class="link-gray px-2 uppercase tracking-widest" to="/">Good Bread</router-link>
         </div>
@@ -14,7 +17,7 @@
           <router-link class="link-gray px-4" to="/register" v-if="!signedIn">Register</router-link>
           <a href="#" @click.prevent="signOut" class="link-gray px-2" v-if="signedIn">Log out</a>
         </div>
-    </div>
+    </nav>
   </header>
 </template>
 <script>
@@ -23,11 +26,28 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'NavBar',
+  data () {
+    return {
+      view: {
+        atTopOfPage: true
+      }
+    }
+  },
+  beforeMount () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
   methods: {
     signOut () {
       this.$store
         .dispatch(LOGOUT)
         .then(() => this.$router.replace('/'))
+    },
+    handleScroll () {
+      if(window.pageYOffset > 0) {
+        if(this.view.atTopOfPage) this.view.atTopOfPage = false
+      } else {
+        if(!this.view.atTopOfPage) this.view.atTopOfPage = true
+      }
     }
   },
   computed: {

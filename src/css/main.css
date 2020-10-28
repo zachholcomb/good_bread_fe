@@ -68,3 +68,12 @@
 .bread-bg .text-holder {
   background: rgba(255, 255, 255, 0.774);
 }
+
+nav {
+  z-index: 10;
+}
+
+nav.scrolled {
+  @apply shadow-2xl;
+  border-bottom: 0px;
+}
