@@ -1,7 +1,7 @@
 <template>
   <Transition name='fade'>
     <div
-      class="overflow-auto fixed pin inset-0 w-full flex items-center justify-center bg-gray-700 bg-opacity-25"
+      class="overflow-auto fixed z-10 pin inset-0 w-full flex items-center justify-center bg-gray-900 bg-opacity-75"
       v-show="value"
       @click.self="close"
     >
