@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link :to="orderLink">
-      {{ order.attributes.status }} {{ order.attributes.delivery_date }}
+      Order #{{ order.id }} {{ order.attributes.status }} {{ order.attributes.delivery_date }}
     </router-link>
   </div>
 </template>
