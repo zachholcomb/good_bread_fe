@@ -33,16 +33,14 @@ const actions = {
     context.commit(PURGE_CART)
   },
   [SET_ORDER] (context, input) {
-    const itemIds = Object.values(input.cart).reduce((array, item) => {
-      array.push(item.id)
-      return array
-    }, [])
-    const orderParams = {
-      items: itemIds
-    }
-    console.log(itemIds)
+    console.log(input)
+    const items = Object.values(input.cart).reduce((hash, item) => {
+      hash[item.id] = { amount: item.amount }
+      return hash
+    }, {})
+    const params = { "items": items }
     return new Promise(resolve => {
-      ApiService.securedPost(`/users/${input.user.id}/orders`, input.token, orderParams)
+      ApiService.securedPost(`/users/${input.user.id}/orders`, input.token, params)
         .then(({ data }) => {
           context.commit(PURGE_CART)
           resolve(data)
