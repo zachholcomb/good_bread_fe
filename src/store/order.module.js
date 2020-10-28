@@ -28,7 +28,7 @@ const actions = {
 
 const mutations = {
   [SET_ORDER_ITEMS] (state, data) {
-    state.orderItems = data.data
+    state.orderItems = data
   }
 }
 
