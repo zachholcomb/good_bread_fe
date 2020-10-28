@@ -14,16 +14,22 @@
       </h3>
     </div>
     <div class="flex justify-center items-center justify-self-end px-4">
-      <h3 class="text-xl font-thin">
-        Quantity:
-      </h3>
-      <h3 class="block">
-        Subtotal:
-      </h3>
+      <div class="block">
+        <h3 class="text-xl font-thin">
+            Qty: {{ getQuantity() }}
+        </h3>
+      </div>
+      <div class="block">
+         <h3 class="px-4 text-xl font-thin">
+            {{ getSubtotal() }}
+        </h3>
+      </div>
     </div>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'ItemIcon',
   props: {
@@ -34,7 +40,22 @@ export default {
       const price = this.item.attributes.price / 100
       return `$ ${price.toFixed(2)}`
     },
-    
+    getQuantity () {
+      const id = this.item.id
+      const quantity = this.orderItems.data.find( orderItem => 
+        orderItem.relationships.item.data.id == id
+      )
+      return quantity.attributes.quantity
+    },
+    getSubtotal () {
+      const price = this.item.attributes.price
+      const quantity = this.getQuantity()
+      const total = (price * quantity) / 100
+      return `$ ${total.toFixed(2)}`
+    }
+  },
+  computed: {
+    ...mapGetters(['orderItems'])
   }
 }
 </script>
