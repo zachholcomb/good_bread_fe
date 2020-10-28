@@ -4,6 +4,12 @@
       Whoops! No Items in Cart!
     </div>
     <div class="divide-y divide-gray-400 max-w-4xl m-auto pt-8 pb-8">
+      <h3 
+        class="text-4xl text-gray-700 p-4 text-center font-thin tracking-widest"
+        v-show="checkCart()"
+      >
+        Your Cart
+      </h3>
       <div
         v-for="item in Object.entries(getCart)"
         v-bind:key="item.id"
