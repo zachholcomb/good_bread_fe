@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-4">
+  <div class="pb-4 pt-6 wood-bg">
     <TabStore v-model="getItems"></TabStore>
   </div>
 </template>

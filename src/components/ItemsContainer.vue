@@ -1,5 +1,5 @@
 <template>
-  <div class="border-double container bg-gray-200 max-w-8xl m-auto">
+  <div class="border-double rounded-lg shadow shadow-2xl container bg-gray-200 max-w-8xl m-auto">
     <div class="text-center pt-4 text-2xl text-gray-700 uppercase tracking-widest">
       <slot />
     </div>
