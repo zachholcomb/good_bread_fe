@@ -96,3 +96,12 @@ nav.scrolled {
 .login-size {
   @apply max-w-sm;
 }
+
+.empy-cart {
+  @apply text-4xl;
+  @apply text-center;
+  @apply text-gray-700;
+  @apply p-32;
+  @apply font-thin;
+  @apply tracking-wider;
+}
