@@ -1,5 +1,5 @@
 <template>
-  <footer class ='bg-gray-200'>
+  <footer class ='bg-gray-200 pt-2'>
     <div class='divide-y pt-10 divide-gray-400 m-2'>
       <div class='py-8 grid grid-cols-2 flex flex-wrap'>
         <div class='uppercase tracking-widest'>
