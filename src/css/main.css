@@ -97,7 +97,7 @@ nav.scrolled {
   @apply max-w-sm;
 }
 
-.empy-cart {
+.empty-cart {
   @apply text-4xl;
   @apply text-center;
   @apply text-gray-700;
