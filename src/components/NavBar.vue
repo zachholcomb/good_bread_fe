@@ -1,14 +1,14 @@
 <template>
-  <header class="pt-8 pb-12">
+  <header class="pt-8 pb-8">
     <nav 
       :class="{ 'scrolled': !view.atTopOfPage }"
-      class="fixed flex w-full bg-white border-b items-center justify-between flex-wrap p-8 m-auto top-0 animated"
+      class="fixed flex w-full bg-white border-b items-center justify-between flex-wrap p-6 m-auto top-0 animated"
     >
         <div>
           <router-link
             v-on:click.native='selectPage(1)'
             :class="{ 'selected' : currentPage == 1 }"
-            class="link-gray px-2 uppercase tracking-widest underline" 
+            class="link-gray px-2 uppercase tracking-widest" 
             to="/"
           >
             Good Bread

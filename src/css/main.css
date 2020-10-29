@@ -41,7 +41,7 @@
   @apply text-green-500;
 }
 .link-gray.selected {
-  @apply text-green-700;
+  @apply text-green-600;
 }
 
 .button {
@@ -69,8 +69,18 @@
   @apply bg-cover;
 }
 
+.bakery-bg {
+  background-image: url(../assets/bakery-bg.jpeg);
+  @apply bg-cover;
+}
+
 .bread-bg .text-holder {
   background: rgba(255, 255, 255, 0.774);
+}
+
+.wood-bg {
+  background-image: url(../assets/wood-bg.jpeg);
+  @apply bg-cover;
 }
 
 nav {
