@@ -22,14 +22,13 @@
         </form>
       </div>
     </UpdateModal>
-    <div class="m-auto">
+    <div class="m-auto text-center">
       <h3 class="text-4xl mb-8 tracking-wider font-thin">Your Subscription</h3>
       <h3>Type: {{ userSub.subscription_type }}</h3>
       <h3>Ship Date: {{ userSub.delivery_day }}</h3>
       <div class="divide-y divide-gray-400 w-48 m-auto">
-        <div v-for="shipment in userShipments" v-bind:key="shipment.id" class="max-w-xs m-auto pt-2">
-          <p>{{ shipment.attributes.status }} {{ shipment.attributes.delivery_date }}</p>
-        </div>
+        <h3 class="py-4 text-xl font-thin tracking-wider">Next Shipment</h3>
+        {{ userNextShipment.delivery_date }} {{ userNextShipment.status }}
       </div>
       <div class="text-center pt-4">
         <button
@@ -66,7 +65,7 @@ export default {
       .dispatch(USER_SUB, params)
   },
   computed: {
-    ...mapGetters(['userSub', 'userShipments'])
+    ...mapGetters(['userSub', 'userNextShipment'])
   },
   methods: {
     openModal () {
