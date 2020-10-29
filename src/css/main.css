@@ -91,3 +91,7 @@ nav.scrolled {
   @apply shadow-2xl;
   border-bottom: 0px;
 }
+
+.login-size {
+  @apply max-w-sm
+}
