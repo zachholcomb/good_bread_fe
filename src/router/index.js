@@ -8,6 +8,7 @@ import Cart from '@/views/Cart.vue'
 import CartLogin from '@/views/CartLogin.vue'
 import CartCheckout from '@/views/CartCheckout.vue'
 import Shop from '@/views/Shop.vue'
+import Order from '@/views/Order.vue'
 
 Vue.use(Router)
 
@@ -54,6 +55,12 @@ export default new Router({
       path: '/cart/checkout',
       name: CartCheckout,
       component: CartCheckout
+    },
+    {
+      name: "Order",
+      path: '/orders/:slug',
+      component: Order,
+      props: true
     }
   ]
 })

@@ -34,7 +34,7 @@
         </form>
       </div>
     </UpdateModal>
-    <div class="m-auto">
+    <div class="m-auto text-center">
       <h3 class="text-4xl mb-8 text-gray-700 tracking-wider font-thin">Account Settings</h3>
       <h3 class="text-2xl text-gray-700">{{ getUser.name }}</h3>
       <h3 class="text-xl text-gray-700">{{ getUser.address }}</h3>

@@ -4,6 +4,7 @@ import auth from './auth.module'
 import shop from './shop.module'
 import dashboard from './dashboard.module'
 import cart from './cart.module'
+import order from './order.module'
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     auth,
     dashboard,
     shop,
-    cart
+    cart,
+    order
   }
 })
