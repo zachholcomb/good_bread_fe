@@ -72,6 +72,7 @@
 .bakery-bg {
   background-image: url(../assets/bakery-bg.jpeg);
   @apply bg-cover;
+  @apply py-12;
 }
 
 .bread-bg .text-holder {
@@ -93,5 +94,5 @@ nav.scrolled {
 }
 
 .login-size {
-  @apply max-w-sm
+  @apply max-w-sm;
 }

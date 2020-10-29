@@ -1,5 +1,5 @@
 <template>
-  <div class="bakery-bg py-12">
+  <div class="bakery-bg">
     <div class="login-size m-auto my-8 py-20">
       <div class="border p-10 border-gray-200 shadow shadow-2xl rounded bg-white">
         <h3 class="text-2xl mb-6 text-gray-700">Login</h3>
