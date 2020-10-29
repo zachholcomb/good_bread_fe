@@ -5,15 +5,15 @@ import { SET_SUB, SET_ERROR, SET_ORDERS } from './mutations.type'
 const state = {
   errors: null,
   user_sub: {},
-  user_shipments: [],
+  user_next_shipment: {},
   user_orders: []
 }
 const getters = {
   userSub (state) {
     return state.user_sub
   },
-  userShipments (state) {
-    return state.user_shipments
+  userNextShipment (state) {
+    return state.user_next_shipment
   },
   userOrders (state) {
     return state.user_orders
@@ -64,8 +64,8 @@ const mutations = {
     state.errors = data
   },
   [SET_SUB] (state, data) {
-    state.user_sub = data.data.attributes
-    state.user_shipments = data.included
+    state.user_sub = data.subscription.data.attributes
+    state.user_next_shipment = data.shipment.data.attributes
   },
   [SET_ORDERS] (state, data) {
     state.user_orders = data.data
