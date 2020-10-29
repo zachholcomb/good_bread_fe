@@ -72,6 +72,7 @@
 .bakery-bg {
   background-image: url(../assets/bakery-bg.jpeg);
   @apply bg-cover;
+  @apply py-12;
 }
 
 .bread-bg .text-holder {
@@ -90,4 +91,17 @@ nav {
 nav.scrolled {
   @apply shadow-2xl;
   border-bottom: 0px;
+}
+
+.login-size {
+  @apply max-w-sm;
+}
+
+.empty-cart {
+  @apply text-4xl;
+  @apply text-center;
+  @apply text-gray-700;
+  @apply p-32;
+  @apply font-thin;
+  @apply tracking-wider;
 }

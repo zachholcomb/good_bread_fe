@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-4xl text-center text-gray-700 p-32 font-thin tracking-wider" v-show="!checkCart()">
+    <div class="empty-cart" v-show="!checkCart()">
       Whoops! No Items in Cart!
     </div>
     <div class="divide-y divide-gray-400 max-w-4xl m-auto pt-8 pb-8">
