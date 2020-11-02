@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import TabStore from '@/components/TabStore.vue'
+import TabStore from '@/components/shop/TabStore.vue'
 import { GET_ITEMS } from '@/store/actions.type'
 import { mapGetters } from 'vuex'
 

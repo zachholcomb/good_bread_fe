@@ -7,8 +7,8 @@
   </div>
 </template>
 <script>
-import GuestCheckout from '@/components/GuestCheckout.vue'
-import UserCheckout from '@/components/UserCheckout.vue'
+import GuestCheckout from '@/components/cart/GuestCheckout.vue'
+import UserCheckout from '@/components/cart/UserCheckout.vue'
 
 export default {
   name: 'CartLogin',

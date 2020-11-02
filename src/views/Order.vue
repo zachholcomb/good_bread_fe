@@ -32,7 +32,7 @@
 import { mapGetters } from 'vuex'
 import { FETCH_ITEMS } from '@/store/actions.type'
 import store from '@/store'
-import ItemIcon from '@/components/ItemIcon.vue'
+import ItemIcon from '@/components/order/ItemIcon.vue'
 
 export default {
   name: 'Order',

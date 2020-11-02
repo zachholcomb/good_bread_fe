@@ -13,9 +13,9 @@
   </div>
 </template>
 <script>
-import ProfileStats from '@/components/ProfileStats.vue'
-import OrderHistory from '@/components/OrderHistory.vue'
-import SubscriptionStats from '@/components/SubscriptionStats.vue'
+import ProfileStats from '@/components/dashboard/ProfileStats.vue'
+import OrderHistory from '@/components/dashboard/OrderHistory.vue'
+import SubscriptionStats from '@/components/dashboard/SubscriptionStats.vue'
 
 export default {
   name: 'UserDashboard',

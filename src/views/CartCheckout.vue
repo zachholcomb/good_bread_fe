@@ -21,8 +21,8 @@
 </div>
 </template>
 <script>
-import CartItem from '@/components/CartItem.vue'
-import GuestRegister from '@/components/GuestRegister.vue'
+import CartItem from '@/components/cart/CartItem.vue'
+import GuestRegister from '@/components/cart/GuestRegister.vue'
 import { mapGetters } from 'vuex'
 import { SET_ORDER } from '@/store/actions.type'
 

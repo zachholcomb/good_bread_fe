@@ -22,14 +22,18 @@
         </form>
       </div>
     </UpdateModal>
-    <div class="m-auto">
-      <h3 class="text-4xl mb-8 tracking-wider font-thin">Your Subscription</h3>
+    <div class="m-auto text-center">
+      <router-link 
+        class="text-4xl mb-8 tracking-wider font-thin hover:text-green-600"
+        to="/subscription"
+      >
+        Your Subscription
+      </router-link>
       <h3>Type: {{ userSub.subscription_type }}</h3>
       <h3>Ship Date: {{ userSub.delivery_day }}</h3>
       <div class="divide-y divide-gray-400 w-48 m-auto">
-        <div v-for="shipment in userShipments" v-bind:key="shipment.id" class="max-w-xs m-auto pt-2">
-          <p>{{ shipment.attributes.status }} {{ shipment.attributes.delivery_date }}</p>
-        </div>
+        <h3 class="py-4 text-xl font-thin tracking-wider">Next Shipment</h3>
+        {{ userNextShipment.delivery_date }} {{ userNextShipment.status }}
       </div>
       <div class="text-center pt-4">
         <button
@@ -45,7 +49,7 @@
 <script>
 import { USER_SUB, UPDATE_SUB } from '@/store/actions.type'
 import { mapGetters } from 'vuex'
-import UpdateModal from '@/components/UpdateModal.vue'
+import UpdateModal from '@/components/utilities/UpdateModal.vue'
 
 export default {
   name: 'SubscriptionStats',
@@ -66,7 +70,7 @@ export default {
       .dispatch(USER_SUB, params)
   },
   computed: {
-    ...mapGetters(['userSub', 'userShipments'])
+    ...mapGetters(['userSub', 'userNextShipment'])
   },
   methods: {
     openModal () {

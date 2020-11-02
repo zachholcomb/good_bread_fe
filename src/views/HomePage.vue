@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import HomeSplash from '@/components/HomeSplash.vue'
+import HomeSplash from '@/components/homepage/HomeSplash.vue'
 
 export default {
   name: 'HomePage',

@@ -9,6 +9,7 @@ import CartLogin from '@/views/CartLogin.vue'
 import CartCheckout from '@/views/CartCheckout.vue'
 import Shop from '@/views/Shop.vue'
 import Order from '@/views/Order.vue'
+import Subscription from '@/views/Subscription.vue'
 
 Vue.use(Router)
 
@@ -61,6 +62,11 @@ export default new Router({
       path: '/orders/:slug',
       component: Order,
       props: true
+    },
+    {
+      name: 'Subscription',
+      path: '/subscription',
+      component: Subscription,
     }
   ]
 })
