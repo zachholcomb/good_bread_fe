@@ -23,7 +23,12 @@
       </div>
     </UpdateModal>
     <div class="m-auto text-center">
-      <h3 class="text-4xl mb-8 tracking-wider font-thin">Your Subscription</h3>
+      <router-link 
+        class="text-4xl mb-8 tracking-wider font-thin hover:text-green-600"
+        to="/subscription"
+      >
+        Your Subscription
+      </router-link>
       <h3>Type: {{ userSub.subscription_type }}</h3>
       <h3>Ship Date: {{ userSub.delivery_day }}</h3>
       <div class="divide-y divide-gray-400 w-48 m-auto">
@@ -44,7 +49,7 @@
 <script>
 import { USER_SUB, UPDATE_SUB } from '@/store/actions.type'
 import { mapGetters } from 'vuex'
-import UpdateModal from '@/components/UpdateModal.vue'
+import UpdateModal from '@/components/utilities/UpdateModal.vue'
 
 export default {
   name: 'SubscriptionStats',

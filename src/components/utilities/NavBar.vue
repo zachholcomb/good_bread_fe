@@ -97,7 +97,6 @@ export default {
       }
     },
     selectPage (selectedPage) {
-      console.log(selectedPage)
       this.currentPage = selectedPage
     }
   },

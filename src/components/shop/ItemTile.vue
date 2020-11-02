@@ -37,7 +37,7 @@
 </template>
 <script>
 import vSelect from 'vue-select'
-import UpdateModal from '@/components/UpdateModal.vue'
+import UpdateModal from '@/components/utilities/UpdateModal.vue'
 import { ADD_CART } from '@/store/actions.type'
 
 export default {

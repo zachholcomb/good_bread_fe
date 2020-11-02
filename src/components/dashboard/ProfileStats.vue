@@ -55,7 +55,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { UPDATE_USER } from '@/store/actions.type'
-import UpdateModal from '@/components/UpdateModal.vue'
+import UpdateModal from '@/components/utilities/UpdateModal.vue'
 
 export default {
   name: 'ProfileStats',

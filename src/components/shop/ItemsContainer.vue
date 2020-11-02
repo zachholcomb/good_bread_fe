@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import ItemTile from '@/components/ItemTile.vue'
+import ItemTile from '@/components/shop/ItemTile.vue'
 
 export default {
   name: 'ItemsContainer',

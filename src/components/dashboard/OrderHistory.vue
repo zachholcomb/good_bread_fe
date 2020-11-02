@@ -13,7 +13,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { USER_ORDERS } from '@/store/actions.type'
-import OrderRow from '@/components/OrderRow.vue'
+import OrderRow from '@/components/dashboard/OrderRow.vue'
 
 export default {
   name: 'OrderHistory',

@@ -63,7 +63,7 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import ItemsContainer from '@/components/ItemsContainer.vue'
+import ItemsContainer from '@/components/shop/ItemsContainer.vue'
 
 export default {
   name: 'TabStore',
