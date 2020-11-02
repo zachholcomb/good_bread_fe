@@ -1,12 +1,13 @@
 import ApiService from '@/common/api.service'
-import { UPDATE_SUB, USER_ORDERS, USER_SUB } from './actions.type'
-import { SET_SUB, SET_ERROR, SET_ORDERS } from './mutations.type'
+import { UPDATE_SUB, USER_ORDERS, USER_SUB, USER_SUB_SHIPMENTS } from './actions.type'
+import { SET_SUB, SET_ERROR, SET_ORDERS, SET_SHIPMENTS } from './mutations.type'
 
 const state = {
   errors: null,
   user_sub: {},
   user_next_shipment: {},
-  user_orders: []
+  user_orders: [],
+  user_shipments: []
 }
 const getters = {
   userSub (state) {
@@ -17,6 +18,9 @@ const getters = {
   },
   userOrders (state) {
     return state.user_orders
+  },
+  userShipments (state) {
+    return state.user_shipments
   }
 }
 
@@ -56,6 +60,20 @@ const actions = {
           context.commit(SET_ERROR, response.data.data.attributes.message)
         })
     })
+  },
+  [USER_SUB_SHIPMENTS](context) {
+    const userId = context.rootState.auth.user.id
+    const token = context.rootState.auth.access
+    return new Promise(resolve => {
+      ApiService.securedGet(`/users/${userId}/shipments`, token)
+        .then(({ data }) => {
+          context.commit(SET_SHIPMENTS, data)
+          resolve(data)
+        })
+        .catch(({ response }) => {
+          context.commit(SET_ERROR, response.data)
+        })
+    })
   }
 }
 
@@ -69,6 +87,9 @@ const mutations = {
   },
   [SET_ORDERS] (state, data) {
     state.user_orders = data.data
+  },
+  [SET_SHIPMENTS] (state, data) {
+    state.user_shipments = data.data
   }
 }
 
