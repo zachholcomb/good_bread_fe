@@ -8,7 +8,7 @@
           <router-link
             v-on:click.native='selectPage(1)'
             :class="{ 'selected' : currentPage == 1 }"
-            class="link-gray px-2 uppercase tracking-widest" 
+            class="link-gray px-2 uppercase tracking-widest text-xl" 
             to="/"
           >
             Good Bread

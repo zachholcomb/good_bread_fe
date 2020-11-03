@@ -20,7 +20,7 @@
         <button
             type="submit"
             @click.prevent="addToCart"
-            class="flex-shrink-0 border-transparent border-4 bg-teal-500 hover:bg-teal-800 text-sm py-1 px-20 rounded text-white"
+            class="flex-shrink-0 border-transparent border-4 bg-green-500 hover:bg-green-800 text-sm py-1 px-20 rounded text-white"
           >
           Add to Cart
         </button>
