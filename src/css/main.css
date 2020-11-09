@@ -212,3 +212,36 @@ nav.scrolled {
   @apply text-gray-500;
   @apply font-thin;
 }
+
+.footer {
+  @apply bg-gray-200;
+  @apply pt-2;
+}
+
+.footer-divide {
+  @apply pt-10;
+  @apply m-2;
+}
+
+.footer-grid {
+  @apply py-8;
+  @apply grid;
+  @apply grid-cols-2;
+}
+
+.footer-contact {
+  @apply uppercase;
+  @apply tracking-widest;
+}
+
+.footer-contact-details {
+  @apply px-20;
+  @apply py-2;
+  @apply text-gray-700;
+}
+
+.footer-email {
+  @apply flex;
+  @apply justify-end;
+  @apply px-20;
+}

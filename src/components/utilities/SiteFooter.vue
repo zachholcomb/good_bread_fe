@@ -1,13 +1,13 @@
 <template>
-  <footer class ='bg-gray-200 pt-2'>
-    <div class='divide-y pt-10 divide-gray-400 m-2'>
-      <div class='py-8 grid grid-cols-2 flex flex-wrap'>
-        <div class='uppercase tracking-widest'>
-          <h3 class='px-20 py-2 text-gray-700'>Good Bread Bake Shop</h3>
-          <h3 class='px-20 py-2 text-gray-700'>Gabby@goodbreadbakeshop.com</h3>
-          <h3 class='px-20 py-2 text-gray-700'>720.985.1595</h3>
+  <footer class ='footer'>
+    <div class='footer-divide divide-y divide-gray-400'>
+      <div class='footer-grid'>
+        <div class='footer-contact'>
+          <h3 class='footer-contact-details'>Good Bread Bake Shop</h3>
+          <h3 class='footer-contact-details'>Gabby@goodbreadbakeshop.com</h3>
+          <h3 class='footer-contact-details'>720.985.1595</h3>
         </div>
-        <div class='flex justify-end px-20'>
+        <div class='footer-email'>
           <EmailForm></EmailForm>
         </div>
       </div>
