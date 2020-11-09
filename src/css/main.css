@@ -106,3 +106,34 @@ nav.scrolled {
   @apply font-thin;
   @apply tracking-wider;
 }
+
+.nav-bar {
+  @apply fixed;
+  @apply flex;
+  @apply w-full;
+  @apply bg-white;
+  @apply border-b;
+  @apply items-center;
+  @apply justify-between;
+  @apply flex-wrap;
+  @apply p-6;
+  @apply m-auto;
+  @apply top-0;
+}
+
+.cart-icon {
+  @apply absolute;
+  @apply right-0;
+  @apply top-0;
+  @apply rounded-full;
+  @apply bg-red-400;
+  @apply w-4;
+  @apply h-4;
+  @apply p-0;
+  @apply m-0;
+  @apply text-white;
+  @apply font-mono;
+  @apply text-sm;
+  @apply leading-tight;
+  @apply text-center;
+}
