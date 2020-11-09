@@ -121,7 +121,41 @@ nav.scrolled {
   @apply top-0;
 }
 
+.nav-logo-text {
+  @apply link-gray;
+  @apply px-2;
+  @apply uppercase;
+  @apply tracking-widest;
+  @apply text-xl;
+}
+
+.nav-item-center {
+  @apply flex;
+  @apply justify-center;
+}
+
+.cart-link {
+  @apply link-gray;
+  @apply px-4;
+  @apply relative;
+  @apply flex;
+}
+
 .cart-icon {
+  @apply flex-1;
+  @apply w-6;
+  @apply h-8;
+  @apply fill-current;
+}
+
+.nav-item-end {
+  @apply flex;
+  @apply justify-end;
+  @apply align-middle;
+  @apply block;
+}
+
+.cart-icon-red {
   @apply absolute;
   @apply right-0;
   @apply top-0;
@@ -136,4 +170,17 @@ nav.scrolled {
   @apply text-sm;
   @apply leading-tight;
   @apply text-center;
+}
+
+.instagram-icon {
+  @apply flex-1;
+  @apply w-8;
+  @apply h-8;
+  @apply fill-current;
+}
+
+.icon-text {
+  @apply text-xs;
+  @apply text-gray-500;
+  @apply font-thin;
 }
