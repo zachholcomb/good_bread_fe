@@ -76,7 +76,7 @@
   @apply py-12;
 }
 
-.bread-bg .text-holder {
+.text-holder {
   background: rgba(255, 255, 255, 0.85);
 }
 
@@ -170,6 +170,34 @@ nav.scrolled {
   @apply text-sm;
   @apply leading-tight;
   @apply text-center;
+}
+
+.home-screen {
+  @apply py-48;
+  @apply bread-bg;
+}
+
+.home-screen-text-box {
+  @apply py-12;
+  @apply rounded-lg;
+  @apply shadow;
+  @apply shadow-2xl;
+  @apply max-w-4xl;
+  @apply text-holder;
+  @apply m-auto;
+  @apply text-green-600;
+  @apply text-center;
+}
+
+.home-screen-header {
+  @apply text-6xl;
+  @apply py-4;
+  @apply font-thin;
+}
+
+.home-screen-secondary-header {
+  @apply text-2xl;
+  @apply py-3;
 }
 
 .instagram-icon {
