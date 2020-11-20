@@ -13,6 +13,14 @@
           >
             Good Bread
           </router-link>
+          <router-link
+            v-on:click.native='selectPage(7)'
+            :class="{ 'selected' : currentPage == 7 }"
+            class="link-gray px-4" 
+            to="/about"
+          >
+            About
+          </router-link>
         </div>
         <div class="nav-item-center">
           <router-link
