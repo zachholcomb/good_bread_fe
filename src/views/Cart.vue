@@ -3,7 +3,7 @@
     <div class="empty-cart" v-show="!checkCart()">
       Whoops! No Items in Cart!
     </div>
-    <div class="divide-y divide-gray-400 max-w-4xl m-auto pt-8 pb-8">
+    <div class="divide-y divide-gray-400 max-w-4xl m-auto pt-20 pb-8">
       <h3 
         class="text-4xl text-gray-700 p-4 text-center font-thin tracking-widest"
         v-show="checkCart()"
@@ -23,7 +23,7 @@
         Grand Total: {{ calcTotal() }}
       </div>
     </div>
-    <div class="max-w-sm m-auto text-center pb-10">
+    <div class="max-w-sm m-auto text-center pb-20">
       <button
         @click.prevent="checkOut"
         v-show="checkCart()"

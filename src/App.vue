@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <NavBar />
-    <router-view/>
+    <FlashMessage :position="'left bottom'"></FlashMessage>
+    <router-view />
     <SiteFooter />
   </div>
 </template>
