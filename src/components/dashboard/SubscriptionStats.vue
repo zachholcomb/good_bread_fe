@@ -4,7 +4,7 @@
       <div class="text-gray-700 center-text">
         <h3 class="text-4xl">Update Subscription Details</h3>
         <form @submit.prevent="updateSubscription">
-          <!-- <div class="text-red-600" v-if="errors">{{ errors }}</div> -->
+          <div class="text-red-600" v-if="errors">{{ errors }}</div>
           <div class="mb-6">
             <label for="status" class="label">Subscription Type</label>
             <input type="name" v-model="userSub.subscription_type" class="input" id="name" placeholder="Bread Loaf">
@@ -36,12 +36,12 @@
         {{ userNextShipment.delivery_date }} {{ userNextShipment.status }}
       </div>
       <div class="text-center pt-4">
-        <button
+        <!-- <button
           class="flex-shrink-0 border-transparent border-4 bg-teal-500 hover:bg-teal-800 text-sm py-1 px-8 rounded text-white"
           @click.prevent="openModal"
         >
           Edit
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
