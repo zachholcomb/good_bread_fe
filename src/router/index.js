@@ -10,6 +10,7 @@ import CartCheckout from '@/views/CartCheckout.vue'
 import Shop from '@/views/Shop.vue'
 import Order from '@/views/Order.vue'
 import Subscription from '@/views/Subscription.vue'
+import AboutPage from '@/views/AboutPage.vue'
 
 Vue.use(Router)
 
@@ -66,6 +67,11 @@ export default new Router({
       name: 'Subscription',
       path: '/subscription',
       component: Subscription,
+    },
+    {
+      name: 'AboutPage',
+      path: '/about',
+      component: AboutPage
     }
   ]
 })

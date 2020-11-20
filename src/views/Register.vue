@@ -2,7 +2,7 @@
   <div class="bakery-bg">
     <div class="max-w-2xl m-auto my-8 py-20">
       <div class="border p-10 border-grey-light shadow shadow-2xl rounded bg-white">
-        <h3 class="text-2xl mb-6 text-gray-700 text-center">Sign Up</h3>
+        <h3 class="text-2xl mb-6 text-gray-700 text-center">Subscription Sign Up</h3>
         <form @submit.prevent="register">
           <div class="text-red-600" v-if="errors">{{ errors }}</div>
           <div class="mb-6 grid grid-cols-6 gap-4">
