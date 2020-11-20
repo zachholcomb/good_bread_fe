@@ -3,18 +3,28 @@
   <div class="text-4xl text-center text-gray-700 p-32" v-show="!checkCart()">
       Whoops! No Items in Cart!
   </div>
-  <GuestRegister v-show="!signedIn && checkCart()"></GuestRegister>
   <div
     class="divide-y divide-gray-400 max-w-4xl m-auto pt-8 pb-8"
     v-show="checkCart()"
   >
+    <div class="text-4xl text-center text-gray-700 p-6 tracking-widest font-thin">Your Order</div>
     <div
       v-for="item in Object.entries(getCart)"
       v-bind:key="item.id"
     >
       <CartItem v-bind:item="item"></CartItem>
     </div>
-    <div class="max-w-md m-auto">
+    <div class="text-4xl text-center text-gray-700 p-6 tracking-widest font-thin">
+      Shipping Address
+      <div v-show="signedIn" class="text-2xl tracking-normal">
+        {{ getUser.address }}
+        {{ getUser.city }},
+        {{ getUser.state }}
+      </div>
+    </div>
+
+    <GuestRegister v-show="!signedIn && checkCart()" v-bind:cart="getCart"></GuestRegister>
+    <div class="max-w-md m-auto" v-show="signedIn && checkCart()">
       <button type="submit" class="button" @click="completePayment">Complete Payment</button>
     </div>
   </div>
@@ -31,6 +41,9 @@ export default {
   components: {
     CartItem,
     GuestRegister
+  },
+  data: {
+    cart: this.getCart
   },
   computed: {
     ...mapGetters(['getCart',
