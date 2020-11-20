@@ -13,6 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@smartweb/vue-flash-message": "^0.6.10",
     "@vue/cli": "^4.5.7",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",

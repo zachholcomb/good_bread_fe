@@ -245,3 +245,9 @@ nav.scrolled {
   @apply justify-end;
   @apply px-20;
 }
+
+.flash-message-block {
+  @apply p-8;
+  @apply text-2xl;
+  @apply font-thin;
+}
