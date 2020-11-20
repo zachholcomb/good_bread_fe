@@ -1,10 +1,11 @@
-import { ADD_CART, REMOVE_ITEM, REMOVE_CART, SET_ORDER } from './actions.type'
+import { ADD_CART, REMOVE_ITEM, REMOVE_CART, SET_ORDER, GUEST_ORDER } from './actions.type'
 import { SET_CART, PURGE_CART_ITEM, PURGE_CART, SET_ERROR } from './mutations.type'
 import Vue from 'vue'
 import ApiService from '@/common/api.service'
 
 const state = {
   items: {},
+  temp_order: {},
   cart_errors: null
 }
 
@@ -33,7 +34,6 @@ const actions = {
     context.commit(PURGE_CART)
   },
   [SET_ORDER] (context, input) {
-    console.log(input)
     const items = Object.values(input.cart).reduce((hash, item) => {
       hash[item.id] = { amount: item.amount }
       return hash
@@ -47,6 +47,20 @@ const actions = {
         })
         .catch(({ response }) => {
           context.commit(SET_ERROR, response.data)
+        })
+    })
+  },
+  [GUEST_ORDER] (context, input) {
+    const items = Object.values(input.items).reduce((hash, item) => {
+      hash[item.id] = { amount: item.amount }
+      return hash
+    }, {})
+    input.items = items
+    return new Promise(resolve => {
+      ApiService.post('/orders', input)
+        .then(({ data }) => {
+          context.commit(PURGE_CART)
+          resolve(data)
         })
     })
   }
