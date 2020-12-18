@@ -80,7 +80,7 @@ export default {
           password: this.password,
           password_confirmation: this.password_confirmation
         })
-        .then(() => this.$router.replace('/dashboard'))
+        .then(() => this.$router.replace('/register/subscription'))
     }
   },
   computed: {
