@@ -83,7 +83,7 @@
   </header>
 </template>
 <script>
-import { LOGOUT } from '@/store/actions.type'
+import { LOGOUT, RESET_SUB } from '@/store/actions.type'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -101,10 +101,13 @@ export default {
   },
   methods: {
     signOut () {
-      this.$store
-        .dispatch(LOGOUT)
-        .then(() => this.$router.replace('/'))
-        .then(() => this.currentPage = 1)
+      Promise.all([
+        this.$store.dispatch(LOGOUT),
+        this.$store.dispatch(RESET_SUB)
+      ]).finally(() => {
+        this.currentPage = 1
+        this.$router.replace('/')
+      })
     },
     handleScroll () {
       if(window.pageYOffset > 0) {
