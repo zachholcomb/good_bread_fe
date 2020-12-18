@@ -1,6 +1,6 @@
 import ApiService from '@/common/api.service'
-import { UPDATE_SUB, USER_ORDERS, USER_SUB, USER_SUB_SHIPMENTS } from './actions.type'
-import { SET_SUB, SET_ERROR, SET_ORDERS, SET_SHIPMENTS } from './mutations.type'
+import { UPDATE_SUB, USER_ORDERS, USER_SUB, USER_SUB_SHIPMENTS, RESET_SUB } from './actions.type'
+import { SET_SUB, SET_ERROR, SET_ORDERS, SET_SHIPMENTS, PURGE_SUB } from './mutations.type'
 
 const state = {
   errors: null,
@@ -74,6 +74,9 @@ const actions = {
           context.commit(SET_ERROR, response.data)
         })
     })
+  },
+  [RESET_SUB](context) {
+    context.commit(PURGE_SUB)
   }
 }
 
@@ -90,6 +93,12 @@ const mutations = {
   },
   [SET_SHIPMENTS] (state, data) {
     state.user_shipments = data.data
+  },
+  [PURGE_SUB] (state) {
+    state.user_sub = {}
+    state.user_next_shipment = {}
+    state.user_orders = []
+    state.user_shipments = []
   }
 }
 
