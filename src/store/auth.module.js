@@ -1,5 +1,5 @@
 import ApiService from '@/common/api.service'
-import { LOGIN, LOGOUT, REGISTER, UPDATE_USER } from './actions.type'
+import { LOGIN, LOGOUT, REGISTER, SET_UP_SUBSCRIPTION, UPDATE_USER, SET_ORDER } from './actions.type'
 import { SET_AUTH, SET_ERROR, PURGE_AUTH } from './mutations.type'
 
 const state = {
@@ -51,8 +51,22 @@ const actions = {
     return new Promise((resolve, reject) => {
       ApiService.update(`/users/${state.user.id}`, state.access, details)
         .then(({ data }) => {
-          console.log(data)
           context.commit(SET_AUTH, data)
+          resolve(data)
+        })
+        .catch(({ response }) => {
+          context.commit(SET_ERROR, response.data.error)
+          reject(response)
+        })
+    })
+  },
+  [SET_UP_SUBSCRIPTION] (context, details) {
+    return new Promise((resolve, reject) => {
+      console.log(details),
+      console.log(state.user.id)
+      console.log(state.access)
+      ApiService.securedPost(`/users/${state.user.id}/subscription`, state.access, details)
+        .then(({ data }) => {
           resolve(data)
         })
         .catch(({ response }) => {

@@ -9,6 +9,8 @@ export const USER_SUB = 'userSub'
 export const USER_ORDERS = 'userOrders'
 export const UPDATE_SUB = 'updateSub'
 export const USER_SUB_SHIPMENTS = 'userShipments'
+export const RESET_SUB = 'resetSub'
+export const SET_UP_SUBSCRIPTION = 'setUserSub'
 
 // ITEM ACTIONS
 export const GET_ITEMS = 'getItems'

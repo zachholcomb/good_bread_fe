@@ -16,3 +16,6 @@ export const PURGE_CART = 'deleteCart'
 
 // ORDER/SHIPMENT MUTATIONS
 export const SET_ORDER_ITEMS = 'setOrderItems'
+
+// SUBSCRIPTION MUTATIONS
+export const PURGE_SUB = 'purgeSub'

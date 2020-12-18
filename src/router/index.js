@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Register from '@/views/Register.vue'
+import RegisterSubscription from '@/views/RegisterSubscription.vue'
 import Login from '@/views/Login.vue'
 import HomePage from '@/views/HomePage.vue'
 import UserDashboard from '@/views/UserDashboard.vue'
@@ -26,6 +27,11 @@ export default new Router({
       path: '/register',
       name: Register,
       component: Register
+    },
+    {
+      path: '/register/subscription',
+      name: RegisterSubscription,
+      component: RegisterSubscription
     },
     {
       path: '/login',
